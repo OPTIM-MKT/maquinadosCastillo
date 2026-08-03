@@ -3,13 +3,19 @@ import ScrollReveal from "@/components/shared/ScrollReveal.tsx";
 import SectionHeader from "@/components/shared/SectionHeader.astro";
 import {
   TbCar,
-  TbSmartHome,
   TbManualGearbox,
-  TbBuildingFactory2,
   TbWorld,
 } from "react-icons/tb";
 
 const sectors = [
+  {
+    name: "Internacional (EUA)",
+    years: "2024",
+    description:
+      "Expansión como proveedor certificado para cliente en Roanoke, Virginia, USA a partir de 2024.",
+    Icon: TbWorld,
+    highlight: true,
+  },
   {
     name: "Automotriz",
     years: "30",
@@ -18,33 +24,18 @@ const sectors = [
     Icon: TbCar,
   },
   {
-    name: "Electrodomésticos",
+    name: "Metal-Mecánico",
     years: "8",
     description:
-      "Fabricación de moldes y piezas para marcas líderes mundiales de electrodomésticos.",
-    Icon: TbSmartHome,
+      "Fabricación de moldes, dispositivos y piezas para la industria metal-mecánica.",
+    Icon: TbManualGearbox,
   },
   {
-    name: "Metal-mecánico",
+    name: "Industria en General",
     years: "6",
     description:
       "Soporte a empresas del sector metalmecánico con piezas de alta precisión y herramentales.",
     Icon: TbManualGearbox,
-  },
-  {
-    name: "Industria General",
-    years: "2",
-    description:
-      "Soluciones para proyectos de ingeniería general que requieren maquinado de alta calidad.",
-    Icon: TbBuildingFactory2,
-  },
-  {
-    name: "Internacional (EUA)",
-    years: "2026",
-    description:
-      "Expansión como proveedor certificado para cliente en Roanoke, Virginia, USA a partir de 2026.",
-    Icon: TbWorld,
-    highlight: true,
   },
 ];
 ---
@@ -59,9 +50,7 @@ const sectors = [
       />
     </ScrollReveal>
 
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5"
-    >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
       {
         sectors.map(({ name, years, description, Icon, highlight }, i) => (
           <ScrollReveal client:visible direction="up" delay={i * 0.08}>
